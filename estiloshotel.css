@@ -11,6 +11,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    min-width: 520px;
+}
+
  #myCarousel, .carousel slide, .carousel-indicators{
    top: 50px;
    margin-top: 20px;
@@ -103,5 +107,11 @@ main{
         border-radius: 20px;
         width: 50%;
         height: 250px;}
+
+        #contenidomodal img{
+            display: block;
+            width: 300px;
+            height: 300px;
+        }
 
    }
