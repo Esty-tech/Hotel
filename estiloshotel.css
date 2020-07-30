@@ -91,6 +91,12 @@ main{
     top: 50px;
 }
 
+#mapa{
+  margin-top: 20px;
+  border: rgb(255, 0, 0) solid 3px;
+  width: 30%;
+}
+
    .pie{
        display: block;
        width: 100%;
