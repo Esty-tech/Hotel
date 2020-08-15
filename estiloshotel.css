@@ -1,8 +1,7 @@
 
 @import url(header.css);
 @import url(menu.css);
-@import url(footer.css);
-@import url(menumedia.css);
+@import url(estilosmodal.css);
 
 *{
 	margin: 0;
@@ -35,18 +34,13 @@ main{
   text-align: right;
   color: rgb(255, 0, 0);
   font-size: 48px;
-
-.carousel-caption p{
-    color:rgb(173, 255, 47);
-    font-size: 18px;
 }
 
-
-.presentacion{
+#elem{
     display: block;
     margin-top: 70px;
     box-sizing: border-box;
-    width: 100%;
+    width: 90%;
     height: auto;
     font-size: 25px;
     list-style: none;
@@ -93,8 +87,8 @@ main{
 
 #mapa{
   margin-top: 20px;
-  border: rgb(255, 0, 0) solid 3px;
-  width: 30%;
+  border:1px solid rgba(228, 11, 11, 0.658);
+  width: 50%;
 }
 
    .pie{

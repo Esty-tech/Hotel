@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="estiloshotel.css">
-  <link rel="stylesheet" href="media.css">   
+  <link rel="stylesheet" href="estiloshotel.css">   
   <link rel="stylesheet" href="estilosmodal.css"> 
   <script src="https://use.fontawesome.com/e570fae7f7.js"></script>
   <script src="https://kit.fontawesome.com/eb9a2aef55.js" crossorigin="anonymous"></script>
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="main.js"></script>
 
   <style>
   .carousel-inner > .item > img,
@@ -27,13 +27,6 @@
   
   body{ background-color: bisque; }
   </style>
-
-
-
-             <link rel="stylesheet" href="media.css">   
-             <link rel="stylesheet" href="estilosmodal.css"> 
-             <link rel="stylesheet" href="estilos.css">
-
 </head>
 
 
@@ -166,7 +159,7 @@
 
   <main class="principal">
 
-    <div class="presentacion">
+    <div id="elem">
       En el hotel Emporio Acapulco ofrecemos un servicio completo:
       <ul>
       <li>♥-Habitaciones de toda dimension y cama de todo tipo segun tus necesidades</li></ul> 
@@ -202,10 +195,13 @@
                  
       <button type="button" onclick="document.getElementById('display').innerHTML=Date()" 
         id="fecha">
-                       <strong><p>La Fecha de HOY</p></strong> 
+                       <strong><p>fecha de Hoy</p></strong> 
         </button>
         <p id="display"></p>
       </div>
+
+      <button onclick="getLocation()">ver mi ubicacion</button>
+      <p id="ubicacion"></p>
   </main>
 
   
@@ -266,5 +262,23 @@
       }
     }, 1000);
     </script>
+
+
+<script> // MY LOCATION
+  var x = document.getElementById("ubicacion");
+  
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  </script>
 </body>
 </html>
