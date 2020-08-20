@@ -9,11 +9,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="estiloshotel.css">   
   <link rel="stylesheet" href="estilosmodal.css"> 
+  <link rel="stylesheet" href="api.css">
   <script src="https://use.fontawesome.com/e570fae7f7.js"></script>
   <script src="https://kit.fontawesome.com/eb9a2aef55.js" crossorigin="anonymous"></script>
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="main.js"></script>
+<script src="api.js"></script>
 
   <style>
   .carousel-inner > .item > img,
@@ -158,8 +160,27 @@
 </div>
 
   <main class="principal">
+   
+    <button class="btn">El Clima en ROSARIO...Loading...</button> 
+    
+    <hr>
 
-    <div id="elem">
+    <div class="container">
+        <div class="section">
+            <button id="dolar">el DOLAR HOY</button>  <br>
+            <button id="uf">valor de UF</button>
+        </div>
+        <div class="section">
+            <ul id="resultado"></ul>
+        </div>
+    </div>
+    <hr>
+
+    <div class="titulo">Un ejemplo:Consumo <strong>API publica</strong> de pokemon</div>
+    <div id="elem" ></div>
+
+
+    <div id="inform">
       En el hotel Emporio Acapulco ofrecemos un servicio completo:
       <ul>
       <li>♥-Habitaciones de toda dimension y cama de todo tipo segun tus necesidades</li></ul> 
