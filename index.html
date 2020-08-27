@@ -8,20 +8,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="estiloshotel.css">
-  <link rel="stylesheet" href="styles/kendo.common.min.css" />
-  <link rel="stylesheet" href="styles/kendo.default.min.css" />
-  <link rel="stylesheet" href="styles/kendo.default.mobile.min.css" />
-   
-  <link rel="stylesheet" href="estilosmodal.css"> 
-  <link rel="stylesheet" href="api.css">
+
   <script src="https://use.fontawesome.com/e570fae7f7.js"></script>
   <script src="https://kit.fontawesome.com/eb9a2aef55.js" crossorigin="anonymous"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script src="main.js"></script>
-<script src="api.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/kendo.all.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="main.js"></script>
+  <script src="api.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/kendo.all.min.js"></script>
 
   <style>
   .carousel-inner > .item > img,
@@ -32,61 +27,31 @@
     margin: auto;
     
   }
-  
-  body{ background-color: bisque; }
+  body{ background-color: rgba(250, 231, 209, 0.856); }
   </style>
 </head>
 
-
 <body>
+  <div id="arriba"><p id="hora"></p></div>
 
-<div><a href=""> <span> <button id="reservo">&#128512;Quiero RESERVAR</button> </span> </a></div>
-
-  <input type="checkbox" name="ActviaVentana" id="ActviaVentana">
-  <label for="ActviaVentana" id="AbreModal">Mi contacto</label>
-  
-  <div class="VentModal">
-    <label for="ActviaVentana" id="CierraModal" >X</label>
-  
-
-     <div class="contenido" id="contenidomodal">
-        <h2>Quer&eacutes tener tu propia <strong>p&aacutegina web?</strong> </h2>
-        <p> Cont&aacutectame</p>
-        <p><a href="https://api.whatsapp.com/send?phone=[054][3413570265]"><i class="fab fa-whatsapp-square"> whatsapp</i></a> 
-        </p>
-        <p> <a href="https://www.linkedin.com/in/esterline-louis-jeune-202b0a16b/"><i class="fab fa-linkedin-in"> LinkedIn</i></a></p>
-        
-        <div class="portafolio">
-            <p>Portafolio</p>
-            <ul> 
-                <li><a href="https://esty-tech.github.io/Hotel/">Folio 1</a></li>
-                <li><a href="https://esty-tech.github.io/sidebar-responsive/">Folio 2</a></li>
-                <li><a href="https://esty-tech.github.io/dpto-sidebar/">Folio 3</a></li>
-                <li><a href="https://esty-tech.github.io/articulos-responsive/">Folio 4</a></li>
-                <li><a href="https://esty-tech.github.io/Galeria/">Folio 5</a></li>
-                </ul>
-              </div>
-        
-        <img src="modal2.jpg" alt="">
-        <img src="modal1.jpg" alt="">
-     </div>
-  </div>
-
+<div><a href="https://hotelesemporio.com/hoteles/emporio-acapulco/"> <span> <button id="reservo">&#128512;Quiero RESERVAR <i class="fas fa-concierge-bell"></i></button> </span> </a></div>
 
   <header class="encabezado"><h1> <img src="logoemporio.jpg" alt=""> HOTEL EMPORIO DE ACAPULCO /<h1>
 
     <div class="menu">
       
-        <a href="https://esty-tech.github.io/Hotel-Catapulco/"><i class="fa fa-home"></i></a>
+        <a href="https://esty-tech.github.io/Hotel-Catapulco/"><i class="fa fa-home">Inicio</i></a>
         <a href="https://hotelesemporio.com/hoteles/emporio-acapulco/#contactoHotel">RESERVACION</a>
         <a href="https://hotelesemporio.com/spa/">SPA/FITNESS</a></li>
         <a href="https://hotelesemporio.com/hoteles/emporio-acapulco/#testimonios">TESTIMONIOS</a>
-        <a href="https://esty-tech.github.io/sidebar-responsive/">GALERIA/EVENTOS</a>
+        <a href="https://esty-tech.github.io/Galeria/">GALERIA/EVENTOS</a>
       </li>
   
-</div>
+    </div>
 
   </header>
+
+  <p id="regresiva">pronto llega la primavera !</p>
   
     <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -165,11 +130,9 @@
   </div>
 </div>
 
-  <main class="principal">
-   
-    <button class="btn">El Clima en ROSARIO...Loading...</button> 
-    
+  <main>
     <hr>
+    <button class="btn">El Clima en ROSARIO...Loading...</button> 
 
     <div class="container">
         <div class="section">
@@ -187,22 +150,23 @@
 
 
     <div id="inform">
-      En el hotel Emporio Acapulco ofrecemos un servicio completo:
-      <ul>
-      <li>♥-Habitaciones de toda dimension y cama de todo tipo segun tus necesidades</li></ul> 
-      <li>♥-hay diferentes tipos de habitaciones: single room, double room, twin room, triple room, suite o adjoining rooms</li></ul>
-      <li>♥-Acceso gratuito a internet</li>
-      <li>♥-Aire acondicionado</li>
-      <li>♥-agua mineral gratuito</li>
-      <li>♥-workout-room, sauna y solarium</li>
+      <h3>En el hotel Emporio Acapulco ofrecemos 
+        un servicio completo:</h3>     
+    <ul>
+      <li><i class="fas fa-home"></i> - Habitaciones de toda dimension y cama de todo tipo segun tus necesidades</li> 
+      <li><i class="fas fa-bed"></i> - hay diferentes tipos de habitaciones: single room, double room, twin room,suite o adjoining rooms</li>
+      <li> <i class="fas fa-wifi"></i>- Acceso gratuito a internet  <i class="fas fa-laptop-house"></i></li>
+      <li><i class="fas fa-fan"></i> - Aire acondicionado  <i class="fas fa-wind"></i></li>
+      <li><i class="fas fa-glass-martini"></i> - agua mineral gratuito</li>
+      <li><i class="fas fa-concierge-bell"></i> - Servicio gastronomico excelente</li>
+      <li><i class="fas fa-spa"></i> - workout-room, sauna y solarium</li>
+    </ul>
     </div>
 
     <div class="foto">
       <img src="hotel5.jpg" alt="foto eventos">
       <p>Tus eventos en ambientes frente al mar</p>
     </div>
-
-    <p id="regresiva"></p>
 
     <div class="video">
 
@@ -217,69 +181,26 @@
      </div>
 
     
+ 
+ <script>
+   var date = new Date();
+   document.getElementById('hora').innerHTML = date;
+ </script>
 
-    <div class="hora">
-                 
-      <button type="button" onclick="document.getElementById('display').innerHTML=Date()" 
-        id="fecha">
-                       <strong><p>fecha de Hoy</p></strong> 
-        </button>
-        <p id="display"></p>
-      </div>
-
-      <button onclick="getLocation()">ver mi ubicacion</button>
+      <button onclick="getLocation()">Mi Ubicacion</button>
       <p id="ubicacion"></p>
   </main>
 
-  
-<div id="example">
-    <div class="demo-section k-content wide" style="max-width: 644px;">
-        <div id="mediaplayer" style="height:360px"></div>
-    </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $("#mediaplayer").kendoMediaPlayer({
-                autoPlay: true,
-                navigatable: true,
-                media: {
-                    title: "ProgressNEXT 2019 Highlights",
-                    source: "https://youtu.be/2OvvwWShNWo"
-                }
-            });
-        });
-    </script>
-</div>
-
-  
-
-
-<footer class="pie">
-
- 
-
-  <div class="copy">
-
-    &copy; Hotel Acapulco <strong>0810 777 9999</strong>
-
-  </div>
-
-  <div class="idiomas">
-
-    <a href="https://translate.google.com/translate?hl=es&sl=auto&tl=en&u=https%3A%2F%2Festy-tech.github.io%2FHotel-Catapulco%2F">VERSION INGLES</a>
-    <a href="https://translate.google.com/translate?hl=es&sl=auto&tl=fr&u=https%3A%2F%2Festy-tech.github.io%2FHotel-Catapulco%2F&sandbox=1">VERSION FRANCAISE</a>
-    <a href="https://translate.google.com/translate?hl=es&sl=auto&tl=pt&u=https%3A%2F%2Festy-tech.github.io%2FHotel-Catapulco%2F">PORTUGUES</a>
-    <a href="https://translate.google.com/translate?hl=es&sl=es&tl=it&u=https%3A%2F%2Festy-tech.github.io%2FHotel-Catapulco%2F">ITALIANO</a>
- 
-
-  </div>
-
-</footer>
+  <footer class="pie">
+       <div>
+           &copy; Hotel Acapulco <strong>0810 777 9999</strong>
+       </div>
+  </footer>
 
 
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Jan 1, 2021 15:37:25").getTime();
+    var countDownDate = new Date("sept 21, 2020 15:37:25").getTime();
     
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -303,7 +224,7 @@
       // If the count down is over, write some text 
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById("regresiva").innerHTML = "FIN DE DESCUENTO";
+        document.getElementById("regresiva").innerHTML = "Estamos en Primavera!!!";
       }
     }, 1000);
     </script>

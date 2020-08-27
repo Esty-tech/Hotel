@@ -1,11 +1,11 @@
 .encabezado{
     display: block;
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     text-align: center;
-    background: rgb(252, 253, 252);
+    background: rgba(128, 248, 15, 0.644);
     color: rgb(255, 69, 0);
-    height: 200px;
+    height: 220px;
     padding: 16px;
     font-size: 22px;
     
@@ -38,7 +38,7 @@ header:hover{
       background: rgba(172, 255, 47, 0.336);
   }
 
-  @media (min-width:600px) {
+  @media (min-width:) {
     .encabezado{
         display: block;
         width: 100%;
@@ -62,10 +62,10 @@ header:hover{
 
   #reservo{
     border-radius: 40%;
-    width: 250px;
+    width: 200px;
     height: 100px;
-    font-size: 35px;
-    color:rgb(253, 9, 9);
+    font-size: 20px;
+    color:rgb(7, 7, 7);
     background-color: rgb(183, 183, 206);
     position: relative;
     animation-name: reservacion;
