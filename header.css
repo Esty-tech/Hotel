@@ -11,6 +11,11 @@
     
 }
 
+#hora{
+  text-align: right;
+  font-size: 10px;
+}
+
 header:hover{
     cursor: pointer;
     
