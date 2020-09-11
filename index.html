@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="estiloshotel.css">
+  <script type="text/javascript" src="https://widgets-viewer.climacell.co/v1/sdk.js"></script>
 
   <script src="https://use.fontawesome.com/e570fae7f7.js"></script>
   <script src="https://kit.fontawesome.com/eb9a2aef55.js" crossorigin="anonymous"></script>
@@ -41,7 +42,6 @@
 <body>
 
  <p id="hora"></p> 
-
 <div><a href="https://hotelesemporio.com/hoteles/emporio-acapulco/"> <span> <button id="reservo">&#128512;Quiero RESERVAR <i class="fas fa-concierge-bell"></i></button> </span> </a></div>
 
   <header class="encabezado"><h1> <img src="logoemporio.jpg" alt=""> HOTEL EMPORIO DE ACAPULCO</h1>
@@ -139,14 +139,12 @@
 </div>
 
   <main>
-    <hr>
-    <button class="clim">El Clima en ROSARIO...Loading...</button> 
-
+    <div class="climacell-widget" data-apikey="t9gK689aYinu5aAqQ4S9qm5Io3mnJBNF" 
+data-type="hourly" data-location-name="Rosario, Santa Fe, Argentina" 
+data-location-lon="-60.69304159999999" data-location-lat="-32.9587022" 
+data-size-mode="small" data-font-color="#ffa813" data-background-color="#bbe090" data-font-family="georgia" data-weather-params="temp:C,precipitation:mm/hr,wind_speed:mph,humidity:%,cloud_cover:%" data-precipitation-timeline="true" 
+data-sunrise-sunset="true" data-allow-users-enter-address="true" ></div>
     
-    <hr>
-
-    <div class="titulo">Un ejemplo:Consumo <strong>API publica</strong> de pokemon</div>
-    <div id="elem" ></div>
 
 
     <div id="inform">
@@ -168,13 +166,13 @@
       <p>Tus eventos en ambientes frente al mar</p>
     </div>
 
-    <div class="video">
+    
 
       <div class="video">
         <video controls autoplay loop poster="hotel1.jpg"> <source src="Playa cercana.mp4" type="video/mp4" alt="video playa" ></video>
       </div>
 
-    </div>
+   
 
     <div id="mapa">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.3312460308766!2d-99.87578238513096!3d16.859500788397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ca5820d211fae9%3A0xaf66d82c892c369b!2sHotel%20Emporio%20Acapulco!5e0!3m2!1ses-419!2sar!4v1590199330328!5m2!1ses-419!2sar" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>" 
