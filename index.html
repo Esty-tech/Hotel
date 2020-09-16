@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="styles/kendo.common.min.css" />
 <link rel="stylesheet" href="styles/kendo.default.min.css" />
 <link rel="stylesheet" href="styles/kendo.default.mobile.min.css" />
-
+<link rel="stylesheet" href="site.css">
 
   
   
@@ -194,6 +194,69 @@ data-sunrise-sunset="true" data-allow-users-enter-address="true" ></div>
            &copy; Hotel Acapulco <strong>0810 777 9999</strong>
        </div>
   </footer>
+  <div class="htm">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title"><a href="index.html">Hotel Acapulco</a></p>
+        </div>
+        <div class="float-right">
+            <nav>
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  </div>
+<div id="cuerpo">
+    <section class="content-wrapper main-content ">
+    <hgroup class="title">
+        <h1>Contact.</h1>
+    </hgroup>
+    
+    <br />
+    <div id="contactsTabStrip">
+        <ul>
+            <li class="k-state-active">
+                <span class="k-link">telefono: 0810 777 9999</span>
+            </li>
+            <li>
+                <span class="k-link">Email: ......</span>
+            </li>
+            <li>
+                <span class="k-link">Address: </span>
+            </li>
+        </ul>
+        <div style="min-height: 100px">
+            <p>
+                <span class="label">Support:</span>
+                <span><a href="/">Equipo de soporte tecnico</a></span>
+            </p>
+            <p>
+                <span class="label">Marketing:</span>
+                <span><a href="/">Equipo de marketing</a></span>
+            </p>
+            <p>
+                <span class="label">General:</span>
+                <span><a href="mailto:General@example.com">Hotel Acapulco</a></span>
+            </p>
+        </div>
+    </div>
+        <script>
+            $(function(){
+                $("#contactsTabStrip").kendoTabStrip();
+            });
+        </script>
+    </section>
+</div>
+<footer>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p>&copy; 2020 - Hotel Acapulco</p>
+        </div>
+    </div>
+</footer>
 
 
 <script>
