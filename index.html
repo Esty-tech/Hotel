@@ -227,6 +227,112 @@ data-sunrise-sunset="true" data-allow-users-enter-address="true" ></div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.3312460308766!2d-99.87578238513096!3d16.859500788397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ca5820d211fae9%3A0xaf66d82c892c369b!2sHotel%20Emporio%20Acapulco!5e0!3m2!1ses-419!2sar!4v1590199330328!5m2!1ses-419!2sar" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>" 
      </div>
 
+
+     <body>
+      <div id="example">
+      <div id="team-schedule">
+          <div id="people">
+              <input checked type="checkbox" id="alex" aria-label="Alex" value="1">
+              <input checked type="checkbox" id="bob" aria-label="Bob" value="2">
+              <input type="checkbox" id="charlie" aria-label="Charlie" value="3">
+          </div>
+      </div>
+      <div id="scheduler"></div>
+  </div>
+  <script>$(function() {
+      $("#scheduler").kendoScheduler({
+          date: new Date(),
+          startTime: new Date("2020/11/01 08:00 AM"),
+          height: 350,
+          views: [
+              "day",
+              { type: "workWeek", selected: true },
+              "week",
+              "month",
+              "agenda",
+              { type: "timeline", eventHeight: 30}
+          ],
+          timezone: "Etc/UTC",
+          dataSource: {
+              batch: true,
+              transport: {
+                  read: {
+                      url: "https://demos.telerik.com/kendo-ui/service/tasks",
+                      dataType: "jsonp"
+                  },
+                  update: {
+                      url: "https://demos.telerik.com/kendo-ui/service/tasks/update",
+                      dataType: "jsonp"
+                  },
+                  create: {
+                      url: "https://demos.telerik.com/kendo-ui/service/tasks/create",
+                      dataType: "jsonp"
+                  },
+                  destroy: {
+                      url: "https://demos.telerik.com/kendo-ui/service/tasks/destroy",
+                      dataType: "jsonp"
+                  },
+                  parameterMap: function(options, operation) {
+                      if (operation !== "read" && options.models) {
+                          return {models: kendo.stringify(options.models)};
+                      }
+                  }
+              },
+              schema: {
+                  model: {
+                      id: "taskId",
+                      fields: {
+                          taskId: { from: "TaskID", type: "number" },
+                          title: { from: "Title", defaultValue: "No title", validation: { required: true } },
+                          start: { type: "date", from: "Start" },
+                          end: { type: "date", from: "End" },
+                          startTimezone: { from: "StartTimezone" },
+                          endTimezone: { from: "EndTimezone" },
+                          description: { from: "Description" },
+                          recurrenceId: { from: "RecurrenceID" },
+                          recurrenceRule: { from: "RecurrenceRule" },
+                          recurrenceException: { from: "RecurrenceException" },
+                          ownerId: { from: "OwnerID", defaultValue: 1 },
+                          isAllDay: { type: "boolean", from: "IsAllDay" }
+                      }
+                  }
+              },
+              filter: {
+                  logic: "or",
+                  filters: [
+                      { field: "ownerId", operator: "eq", value: 1 },
+                      { field: "ownerId", operator: "eq", value: 2 }
+                  ]
+              }
+          },
+          resources: [
+              {
+                  field: "ownerId",
+                  title: "Owner",
+                  dataSource: [
+                      { text: "NAVIDAD", value: 1, color: "green" },
+                      { text: "SANTA TERESA", value: 2, color: "#51a0ed" },
+                      { text: "DIA DE LA PATRIA", value: 3, color: "#56ca85" }
+                  ]
+              }
+          ]
+      });
+  
+      $("#people :checkbox").change(function(e) {
+          var checked = $.map($("#people :checked"), function(checkbox) {
+              return parseInt($(checkbox).val());
+          });
+  
+          var scheduler = $("#scheduler").data("kendoScheduler");
+  
+          scheduler.dataSource.filter({
+              operator: function(task) {
+                  return $.inArray(task.ownerId, checked) >= 0;
+              }
+          });
+      });
+  });</script>
+
     
  
  <script>
