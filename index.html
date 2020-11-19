@@ -176,48 +176,7 @@ data-sunrise-sunset="true" data-allow-users-enter-address="true" ></div>
       <p>Tus eventos en ambientes frente al mar</p>
     </div>
 
-<div id="example">
-    <div class="demo-section k-content" style="text-align: center;">
-        <h4>Elegi una fecha</h4>
-        <div>
-            <div id="calendar"></div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="box-col">
-            <h4>Proba en el calendario</h4>
-            <input id="dropDownList" />
-        </div>
-    </div>
-    <script>
-        $(document).ready(function () {
-            // create Calendar from div HTML element
-            $("#calendar").kendoCalendar({
-                componentType: "modern"
-            });
-
-            $("#dropDownList").kendoDropDownList({
-                dataSource: ["modern", "classic"],
-                value: "modern",
-                change: function (e) {
-                    var calendar = $("#calendar").data("kendoCalendar");
-                    var type = this.value();
-                    var parent = $("#calendar").parent();
-
-                    calendar.destroy();
-                    parent.empty();
-                    parent.append('<div id="calendar"></div>');
-                    $("#calendar").kendoCalendar({
-                        componentType: type
-                    });
-                }
-            });
-        });
-    </script>
-</div>
-    
-
-      <div class="video">
+    <div class="video">
         <video controls autoplay loop poster="hotel1.jpg"> <source src="Playa cercana.mp4" type="video/mp4" alt="video playa" ></video>
       </div>
 
@@ -228,111 +187,42 @@ data-sunrise-sunset="true" data-allow-users-enter-address="true" ></div>
      </div>
 
 
-     <body>
-      <div id="example">
-      <div id="team-schedule">
-          <div id="people">
-              <input checked type="checkbox" id="alex" aria-label="Alex" value="1">
-              <input checked type="checkbox" id="bob" aria-label="Bob" value="2">
-              <input type="checkbox" id="charlie" aria-label="Charlie" value="3">
-          </div>
+     <head>
+      <base href="https://demos.telerik.com/kendo-ui/calendar/selection?autoRun=true&theme=material-v2">
+      <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
+      <title>disponibilidad</title>
+      <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.1118/styles/kendo.material-v2.min.css" />
+  
+      <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+      
+      
+      <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+      
+      
+  
+  </head>
+  <base href="https://demos.telerik.com/kendo-ui/calendar/selection?autoRun=true&theme=material-v2">
+      
+  <div id="example">
+      <div class="demo-section k-content" style="text-align: center;">
+          <h4>Chequea si la habitacion que deseas esta disponible en la fecha que la queres</h4>
+          <div id="calendar"></div>
       </div>
-      <div id="scheduler"></div>
+      <script>
+                  $(document).ready(function() {
+                      // create Calendar from div HTML element
+                      $("#calendar").kendoCalendar({
+                          selectable: "multiple",
+                          weekNumber: true,
+                          disableDates: ["we", "sa"]
+                      });
+                  });
+      </script>
   </div>
-  <script>$(function() {
-      $("#scheduler").kendoScheduler({
-          date: new Date(),
-          startTime: new Date("2020/11/01 08:00 AM"),
-          height: 350,
-          views: [
-              "day",
-              { type: "workWeek", selected: true },
-              "week",
-              "month",
-              "agenda",
-              { type: "timeline", eventHeight: 30}
-          ],
-          timezone: "Etc/UTC",
-          dataSource: {
-              batch: true,
-              transport: {
-                  read: {
-                      url: "https://demos.telerik.com/kendo-ui/service/tasks",
-                      dataType: "jsonp"
-                  },
-                  update: {
-                      url: "https://demos.telerik.com/kendo-ui/service/tasks/update",
-                      dataType: "jsonp"
-                  },
-                  create: {
-                      url: "https://demos.telerik.com/kendo-ui/service/tasks/create",
-                      dataType: "jsonp"
-                  },
-                  destroy: {
-                      url: "https://demos.telerik.com/kendo-ui/service/tasks/destroy",
-                      dataType: "jsonp"
-                  },
-                  parameterMap: function(options, operation) {
-                      if (operation !== "read" && options.models) {
-                          return {models: kendo.stringify(options.models)};
-                      }
-                  }
-              },
-              schema: {
-                  model: {
-                      id: "taskId",
-                      fields: {
-                          taskId: { from: "TaskID", type: "number" },
-                          title: { from: "Title", defaultValue: "No title", validation: { required: true } },
-                          start: { type: "date", from: "Start" },
-                          end: { type: "date", from: "End" },
-                          startTimezone: { from: "StartTimezone" },
-                          endTimezone: { from: "EndTimezone" },
-                          description: { from: "Description" },
-                          recurrenceId: { from: "RecurrenceID" },
-                          recurrenceRule: { from: "RecurrenceRule" },
-                          recurrenceException: { from: "RecurrenceException" },
-                          ownerId: { from: "OwnerID", defaultValue: 1 },
-                          isAllDay: { type: "boolean", from: "IsAllDay" }
-                      }
-                  }
-              },
-              filter: {
-                  logic: "or",
-                  filters: [
-                      { field: "ownerId", operator: "eq", value: 1 },
-                      { field: "ownerId", operator: "eq", value: 2 }
-                  ]
-              }
-          },
-          resources: [
-              {
-                  field: "ownerId",
-                  title: "Owner",
-                  dataSource: [
-                      { text: "NAVIDAD", value: 1, color: "green" },
-                      { text: "SANTA TERESA", value: 2, color: "#51a0ed" },
-                      { text: "DIA DE LA PATRIA", value: 3, color: "#56ca85" }
-                  ]
-              }
-          ]
-      });
   
-      $("#people :checkbox").change(function(e) {
-          var checked = $.map($("#people :checked"), function(checkbox) {
-              return parseInt($(checkbox).val());
-          });
+      
   
-          var scheduler = $("#scheduler").data("kendoScheduler");
-  
-          scheduler.dataSource.filter({
-              operator: function(task) {
-                  return $.inArray(task.ownerId, checked) >= 0;
-              }
-          });
-      });
-  });</script>
-
+  </body>
     
  
  <script>
@@ -349,6 +239,8 @@ data-sunrise-sunset="true" data-allow-users-enter-address="true" ></div>
            &copy; Hotel Acapulco <strong>0810 777 9999</strong>
        </div>
       </footer>
+
+
 <footer>
     <div class="content-wrapper">
         <div class="float-left">
