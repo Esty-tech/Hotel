@@ -23,6 +23,8 @@
 
 <script src="js/jquery.min.js"></script>
 
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 
  <script src="js/kendo.all.min.js"></script>
  
@@ -156,6 +158,88 @@ data-size-mode="small" data-font-color="#ffa813" data-background-color="#bbe090"
 data-sunrise-sunset="true" data-allow-users-enter-address="true" ></div>
     
 
+<base href="https://demos.telerik.com/kendo-ui/qrcode/index">
+    <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
+    <title></title>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.1021/styles/kendo.default-v2.min.css" />
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1021/js/jquery.min.js"></script>
+    
+    
+    <script src="https://kendo.cdn.telerik.com/2020.3.1021/js/kendo.all.min.js"></script>
+                  <div id="example" class="k-content">
+                    <div class="qr-wrapper">
+                        <div class="demo-section">
+                            <p>E-mail</p>
+                            <div id="qrMail"></div>
+                        </div>
+                        <div class="demo-section">
+                            <p>URL</p>
+                            <div id="qrUrl"></div>
+                        </div>
+                        <div class="demo-section">
+                            <p>Telephone</p>
+                            <div id="qrTelephone"></div>
+                        </div>
+                        <div class="demo-section">
+                            <p>Geo Location</p>
+                            <div id="qrGeoLocation"></div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                
+                            $("#qrMail").kendoQRCode({
+                                value: "mailto:esterline023@yahoo.fr",
+                                size: 80,
+                                color: "#e15613",
+                                background: "transparent"
+                            });
+                
+                            $("#qrUrl").kendoQRCode({
+                                value: "https://www.linkedin.com/in/esterline-louis-jeune-202b0a16b/",
+                                errorCorrection: "M",
+                                size: 80,
+                                border: {
+                                    color: "#ffa500",
+                                    width: 2
+                                }
+                            });
+                
+                            $("#qrTelephone").kendoQRCode({
+                                value: "tel:+54-3413570265",
+                                errorCorrection: "Q",
+                                size: 80,
+                                color: "#ffa500",
+                                border: {
+                                    color: "#e15613",
+                                    width: 2
+                                }
+                            });
+                
+                            $("#qrGeoLocation").kendoQRCode({
+                                value: "geo:-37.0582959,-64.5207147",
+                                errorCorrection: "H",
+                                size: 80,
+                                color: "#166a83"
+                            });
+                        });
+                
+                    </script>
+                
+                    <style>
+                        .demo-section {
+                            display: inline-block;
+                            margin: 5px 10px 5px 0;
+                        }
+                
+                        .k-qrcode {
+                            display: inline-block;
+                            margin: 3px 0 0;
+                            border: none;
+                        }
+                    </style>
+                </div>
 
     <div id="inform">
       <h3>En el hotel Emporio Acapulco ofrecemos 
