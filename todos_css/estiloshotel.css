@@ -100,14 +100,10 @@ main{
     margin-bottom: 16px;
 }
 
-.video{
-    display: block;
-    display: flex;
-    box-sizing: border-box;
-    width: 60%;
-    height: auto;
-    margin: 10px;
-    top: 50px;
+hr{
+    font-size: 15px;
+    color: green;
+    font-weight: 800;
 }
 
    .pie{
@@ -150,3 +146,24 @@ main{
     left: 234px;
     top: 81px;
 }
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
